@@ -16,5 +16,9 @@ Basta esperar que inicie, para fazer login, deve usar:
   - **Password**: aulaspl
   - **Host**: host.docker.internal
 
-
-
+## Conectar PSQL pela consola:
+  1 -> Ir ao docker desktop
+  2 -> Abrir consola do docker desktop db_fichas
+  3 -> Executar o comando:
+    psql -h host.docker.internal -p 5432 -d dbfichas -U aulaspl
+    aulaspl
