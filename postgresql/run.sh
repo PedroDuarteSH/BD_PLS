@@ -9,7 +9,7 @@
 #   University of Coimbra
 
 image="bd-psql"
-container="db"
+container="aulas_pl"
 
 
 echo "-- Running --"
