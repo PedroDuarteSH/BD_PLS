@@ -22,3 +22,4 @@ Basta esperar que inicie, para fazer login, deve usar:
   3 -> Executar o comando:
     psql -h host.docker.internal -p 5432 -d dbfichas -U aulaspl
     aulaspl
+
