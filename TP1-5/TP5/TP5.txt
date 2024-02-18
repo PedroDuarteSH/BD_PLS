@@ -1,0 +1,17 @@
+1 -> Select Min(Sal) as "Salario minimo" from emp;
+2 -> Select nome, funcao, sal from emp where sal = (Select Min(Sal) from emp);
+3 -> Select nome, funcao, sal from emp where funcao = (Select funcao from emp where nome = 'Olga Costa');
+4 -> Select nome, sal, ndep from emp where (sal, ndep) in (Select Max(sal), ndep from emp Group By ndep);
+5 -> Select NOME, SAL, FUNCAO, NDEP from emp where sal > Any(Select sal from emp where ndep = 30) order by sal desc;
+6 -> Select nome, sal, funcao, ndep from emp where sal > ALL(Select sal from emp, dep where dep.nome = 'Vendas' and dep.ndep = emp.ndep ) order by sal desc;
+7 -> Select dep.nome,Round(AVG(Sal),2) as "Salario Medio" from emp, dep where emp.ndep = dep.ndep Group by dep.nome Having AVG(sal) > (Select AVG(sal) from emp where ndep = 30);
+8 -> 
+9 ->
+10 -> INSERT INTO emp2 (nemp, nome, funcao, encar, data_entrada, sal, premios, ndep) VALUES (5555, 'CHICO FININHO', 'CANTOR', null, CURRENT_DATE , 100000, null, 40);
+11 -> Insert into emp2 Select nemp, UPPER(nome), funcao, encar, CURRENT_DATE,  Greatest(sal, 70001), premios, ndep from emp where nemp <> 1902 and nemp <> 1369;
+12 -> Delete from emp2 where ndep = 10; //Erro por causa de depencias (Chave forasteira)
+13 -> Delete from emp2 where ndep = 20;
+14 -> Delete from emp2 where nemp = 1654;
+
+
+A Adriana não é fixe

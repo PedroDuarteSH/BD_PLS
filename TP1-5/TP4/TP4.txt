@@ -1,0 +1,14 @@
+1->Select UPPER(emp.nome), funcao, dep.nome From emp, dep where emp.ndep = dep.ndep and funcao = 'Vendedor' and dep.nome = 'Vendas' order by emp.nome;
+2->SELECT count(emp) as "Total de Empregados" from emp;
+3->SELECT count(emp) as "Total de Empregados que não ganham premio " from emp where premios is NULL;
+4->SELECT count(emp) as "Total de Empregados" , ROUND(AVG(sal),2) as "Salário médio mensal",( SUM(sal))*12+SUM(PREMIOS) as "Remuneracao total anual"  from emp;
+5->Select nome as "NOME", funcao as "FUNCAO", sal as "SAL", ROUND(sal*1.1355,1) as "Salário com aumento" from emp where funcao ='Continuo';
+6->Select nome as "NOME", funcao as "FUNCAO", sal as "SAL", ROUND(sal*1.1355,0) as "Salário com aumento" from emp where funcao ='Continuo';
+7->Select RPAD(CONCAT(CONCAT('>>>> ', nome ), ' '),25, '<') from emp order by nome;
+8->Select Min(Sal), Max(Sal),Round(Avg(sal),2) from emp;
+9->Select dep.ndep as "Departamento", Max(sal)-Min(sal) as "Diferença" from emp, dep where dep.ndep = emp.ndep Group by dep.ndep order by dep.ndep;
+10->Select funcao as "FUNCAO", count(emp) as "Quantidade" from emp group by funcao order by funcao;
+11->Select funcao as "FUNCAO", count(emp) as "Quantidade" from emp where funcao = 'Analista' or funcao like '%o' group by funcao order by funcao;
+12->Select encar as "Encarregado", Min(Sal)  from emp group by encar Having Min(sal) > 200000 order by Min(sal);
+13->Select funcao as "FUNCAO", Round(AVG(sal),0) as "Salário Médio" from emp group by funcao Having count(emp) > 1 order by Avg(sal);
+14->Select ndep as "NDEP", funcao as "FUNCAO", MAX(sal)as "Salário máximo", Min(Sal) as "Salário Minimo",ROUND( AVG(sal),0) as "Salário médio", Count(emp) as "Numero de Empregados" from emp where nome <> 'Jorge Sampaio' group by ndep, funcao Having Max(sal)  >  200000 order by ndep, Max(sal);

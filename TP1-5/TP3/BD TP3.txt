@@ -1,0 +1,12 @@
+1) Select emp.nome, funcao, dep.nome from emp, dep where dep.ndep = emp.ndep order by dep.nome, emp.nome;
+2) select emp.nome, sal,dep.ndep, dep.nome from emp, dep where dep.ndep = emp.ndep and emp.nome like 'A% R%';
+3) select emp.nome, sal, dep.nome, local from emp, dep where dep.ndep = emp.ndep  and sal < 150000;
+
+5) select DISTINCT escalao, funcao from emp, descontos where sal > salinf and sal < salsup ;
+6) select nome, funcao, sal from emp, descontos where sal > salinf and sal < salsup and escalao = 4 order by nome;
+7) select emp.nome, funcao, sal, dep.nome from emp, descontos, dep where sal > salinf and sal < salsup and escalao = 4 and dep.ndep = emp.ndep order by emp.nome;
+ou select emp.nome, funcao, sal, dep.nome from emp, descontos, dep where sal between salinf and salsup and escalao = 4 and dep.ndep = emp.ndep order by emp.nome;
+8) select emp.nome, funcao, sal, dep.local from emp, dep where dep.local = 'Coimbra' and sal > 150000 and dep.ndep = emp.ndep;
+9) select emp.nome, funcao, escalao, dep.nome from emp, dep, descontos where funcao <> 'Continuo' and emp.ndep = dep.ndep and sal between salinf and salsup order by escalao DESC, dep.nome DESC;
+10)select  encar.nome, empra.nome from emp as encar, emp as empra where empra.encar = encar.nemp order by encar.nome, empra.nome;
+11)select dep.ndep, dep.nome, dep.local from dep, emp except select emp.ndep, dep.nome, dep.local from dep, emp;

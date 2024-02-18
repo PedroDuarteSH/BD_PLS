@@ -24,3 +24,4 @@ Basta esperar que inicie, para fazer login, deve usar:
     - aulaspl
 
 
+### Adicionadas resolucoes a 14/02/2022
